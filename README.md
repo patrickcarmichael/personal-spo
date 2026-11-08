@@ -16,14 +16,18 @@ score = (0.28·value + 0.22·unique + 0.20·reliable + 0.15·integration + 0.15�
         − min(15, monthly cost / 20)
 ```
 
+The result is clamped to 0–100 and rounded to a whole number.
+
+Verdicts are checked in this order, first match wins:
+
 | Verdict | Rule |
 |---|---|
-| **Keep** | score ≥ 75 |
 | **Specialist** | uniqueness ≥ 4 but score < 60: odd, but irreplaceable |
-| **Consolidate** | score 58–74: duplicates a route you already have |
+| **Keep** | score ≥ 75 |
+| **Consolidate** | score 58–74: duplicates a route you already have (a score of 58–59 with uniqueness ≥ 4 is Specialist instead) |
 | **Sunset** | everything else |
 
-The summary cards track active paths, monthly spend and potential savings. It borrows one more ad-tech idea, the *working media ratio*: the share of time and money that reaches an actual outcome instead of setup, migration and deciding which tool should ask which other tool.
+The summary cards track active paths, monthly spend, keep/specialist count and potential savings (the monthly cost of Consolidate and Sunset rows). It borrows one more ad-tech idea, the *working media ratio*: the share of time and money that reaches an actual outcome instead of setup, migration and deciding which tool should ask which other tool.
 
 ## Details
 
